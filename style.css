@@ -903,3 +903,235 @@ button,input,select,textarea{font:inherit}
   .person-summary h3 { font-size: 24px; }
   .person-bio { padding: 0 15px 17px; font-size: 12px; }
 }
+
+
+/* ===== Revisão 06: ajustes solicitados após a revisão 05 ===== */
+
+/* Todas as divisórias continuam em largura total e alcançam as bordas da viewport. */
+.line-transition {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0;
+  overflow: visible;
+  position: relative;
+  z-index: 4;
+}
+.line-transition--hero-intro {
+  height: 26px;
+  margin-top: -13px;
+  margin-bottom: -13px;
+  background: transparent;
+}
+.line-transition--hero-intro span:first-child { background: var(--navy); }
+.line-transition--hero-intro span:last-child { background: var(--orange); }
+
+/* Entre compromisso e Chico: onda simples maior, em laranja. */
+.wave-divider--intro {
+  height: clamp(66px, 7vw, 96px);
+  background: linear-gradient(to bottom, var(--navy) 50%, var(--paper) 50%);
+}
+.wave-divider--intro img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  filter: brightness(0) saturate(100%) invert(58%) sepia(49%) saturate(1024%) hue-rotate(333deg) brightness(99%) contrast(93%);
+}
+
+/* Entre prestação de contas e equipe: divisória mais alta em azul-marinho. */
+.wave-divider--accountability-team {
+  height: clamp(70px, 7.5vw, 104px);
+  background: linear-gradient(to bottom, var(--straw) 50%, var(--orange) 50%);
+}
+.wave-divider--accountability-team img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  filter: brightness(0) saturate(100%) invert(14%) sepia(21%) saturate(1600%) hue-rotate(169deg) brightness(88%) contrast(95%);
+}
+
+/* Entre equipe e participação: onda simples em palha. */
+.wave-divider--support {
+  height: clamp(58px, 6vw, 82px);
+  background: linear-gradient(to bottom, var(--orange) 50%, var(--green) 50%);
+}
+.wave-divider--support img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  filter: brightness(0) saturate(100%) invert(91%) sepia(13%) saturate(390%) hue-rotate(344deg) brightness(104%) contrast(94%);
+}
+
+/* Retratos quadrados: o halftone fica restrito ao quadro da fotografia. */
+.team-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.person-summary .portrait {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border: 1px solid #55595D;
+  background-color: #F8F1E3;
+  background-image: radial-gradient(rgba(22,48,74,.23) .72px, transparent .88px);
+  background-size: 4px 4px;
+}
+.person-summary .portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  padding: 0;
+}
+.person-card,
+.person-summary,
+.person-bio {
+  background: var(--straw) !important;
+  background-image: none !important;
+}
+
+/* Participação: texto, formulário horizontal e slideshow em sequência vertical. */
+.support-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "heading"
+    "form"
+    "gallery";
+  gap: 26px;
+  max-width: 1180px;
+}
+.support-heading {
+  grid-area: heading;
+  align-self: start;
+  max-width: 760px;
+}
+.support-heading h2 { margin-bottom: 16px; }
+.support-heading > p:last-child { max-width: 720px; }
+.support-form-wrap {
+  grid-area: form;
+  width: 100%;
+  height: auto;
+  padding: clamp(22px, 3vw, 34px);
+}
+.support-form-wrap form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 18px;
+  row-gap: 12px;
+  align-items: start;
+}
+.support-form-wrap .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.support-form-wrap form > label,
+.support-form-wrap form > textarea,
+.support-form-wrap form > button,
+.support-form-wrap form > .form-privacy,
+.support-form-wrap form > .form-status {
+  grid-column: 1 / -1;
+}
+.support-form-wrap .form-field input,
+.support-form-wrap .form-field select {
+  width: 100%;
+}
+.support-gallery {
+  grid-area: gallery;
+  width: 100%;
+  min-width: 0;
+}
+.support-counter { display: none !important; }
+
+/* Rodapé laranja, com assinatura em azul-marinho. */
+.site-footer {
+  background: var(--orange);
+  color: var(--navy);
+  justify-content: space-between;
+}
+.footer-title,
+.footer-credit {
+  color: var(--navy) !important;
+}
+
+/* Botão flutuante: fundo palha, contorno azul-marinho e seta verde-oceano. */
+.back-to-top {
+  background: var(--straw);
+  color: var(--green);
+  border: 1px solid var(--navy);
+}
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  background: var(--green);
+  color: var(--straw);
+  border-color: var(--navy);
+}
+
+/* Divisória final preserva a arte; o rodapé assume a cor laranja da paleta. */
+.footer-divider {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Responsividade das novas proporções. */
+@media (max-width: 1150px) {
+  .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 850px) {
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 680px) {
+  .line-transition--hero-intro { height: 22px; margin-top: -11px; margin-bottom: -11px; }
+  .wave-divider--intro { height: 60px; }
+  .wave-divider--accountability-team { height: 62px; }
+  .wave-divider--support { height: 54px; }
+  .team-grid { grid-template-columns: minmax(0, 1fr); max-width: 390px; }
+  .person-summary .portrait { aspect-ratio: 1 / 1; }
+  .support-inner { grid-template-columns: minmax(0, 1fr); grid-template-areas: "heading" "form" "gallery"; gap: 20px; }
+  .support-form-wrap form { grid-template-columns: minmax(0, 1fr); }
+  .site-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+
+/* ===== Revisão 07: ajustes de identificação e participação ===== */
+.hero-kicker {
+  color: var(--navy) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.hero-kicker::before,
+.hero-kicker::after {
+  content: "★";
+  display: inline-block;
+  color: var(--orange);
+  font-size: 19px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.commitment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.support-heading h2 {
+  font: normal clamp(43px, 5.4vw, 76px)/.98 var(--display);
+  color: var(--straw);
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+.support-heading h2 em { color: var(--orange); font-style: normal; }
+.support-form-wrap { padding-top: clamp(24px, 3vw, 36px); }
+.support-form-wrap > h3,
+.support-form-wrap > p:not(.form-status) { display: none !important; }
+#contact-form { margin-top: 0; }
+.gallery-heading { align-items: center; }
+.gallery-heading h3 { margin: 0; }
+.gallery-heading .eyebrow { display: none !important; }
+@media (max-width: 680px) {
+  .hero-kicker { gap: 11px; }
+  .hero-kicker::before, .hero-kicker::after { font-size: 16px; }
+  .commitment-grid { grid-template-columns: minmax(0, 1fr); }
+}

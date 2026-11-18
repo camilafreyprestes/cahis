@@ -1,0 +1,39 @@
+ATUALIZAÇÃO DO SITE — REVISÃO 06
+
+Arquivos incluídos:
+- index.html
+- style.css
+- script.js
+- assets/artes_site/divisoria_5-6.svg
+- assets/artes_site/divisoria_8-rodape.svg
+
+O que mudou:
+1. A divisória entre as seções 1 e 2 agora é feita por duas barras em HTML, sobrepostas à junção para evitar linha ou vão no celular.
+2. A divisória entre as seções 2 e 3 usa onda_simples.svg em laranja e com maior altura.
+3. A divisória entre as seções 5 e 6 usa a arte divisoria_5-6.svg recolorida por CSS para azul-marinho e com maior altura.
+4. A divisória entre as seções 6 e 7 usa onda_simples.svg em palha.
+5. As fotos dos integrantes ficam em quadros quadrados; a retícula halftone permanece somente no quadro da foto.
+6. A seção de participação não exibe mais contador nem botão de registrar apoio. Mantém o formulário Web3Forms e o slideshow logo abaixo.
+7. O formulário foi reorganizado horizontalmente em telas maiores e volta a uma coluna no celular.
+8. O rodapé passa a ter fundo laranja e texto azul-marinho.
+9. O botão flutuante de retorno ao início passa a ter fundo palha, contorno azul-marinho e seta verde-oceano.
+10. Os três ícones novos das propostas são referenciados como SVG.
+
+IMPORTANTE — ASSETS QUE JÁ DEVEM EXISTIR NO SEU REPOSITÓRIO:
+- assets/artes_site/memoria_curso.svg
+- assets/artes_site/transparencia_real.svg
+- assets/artes_site/gestao_organizada.svg
+- assets/artes_site/onda_simples.svg
+- demais artes, fotos e fontes já utilizadas pelo site
+
+Este pacote é uma atualização, não uma cópia integral da pasta assets. Copie os arquivos de código para a raiz do projeto e os SVGs incluídos para assets/artes_site, sem apagar as demais pastas de assets.
+
+
+REVISÃO 07 — AJUSTES ADICIONAIS
+- Foto de Mariana corrigida para assets/fotos/mariana.png.
+- Novo cartão de Mariane (Colaboradora), usando assets/fotos/mariane.png.
+- Abertura com CHAPA em azul-marinho e estrelas laranja dos dois lados.
+- Sigla na frase de compromisso ajustada para C.A.
+- Removidos os cartões "Acolher quem chega" e "Contas abertas".
+- Participação: título principal "Fale com a gente"; removidos os textos repetidos do painel do formulário.
+- Galeria sem o subtítulo "Apoio que se multiplica"; permanece "Veja quem já está com a gente nessa".

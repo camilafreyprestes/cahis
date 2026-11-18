@@ -47,32 +47,6 @@
   window.addEventListener("scroll", updateBackToTop, { passive: true });
   updateBackToTop();
 
-  // Contador demonstrativo: local ao navegador. Não representa uma contagem pública.
-  const supportButton = document.getElementById("support-button");
-  const supportCount = document.getElementById("support-count");
-  const countKey = "dragaoDoMar_localSupportCount";
-  let localCount = Number.parseInt(localStorage.getItem(countKey) || "0", 10);
-  if (!Number.isFinite(localCount) || localCount < 0) localCount = 0;
-
-  const renderCount = () => {
-    if (supportCount) supportCount.textContent = String(localCount);
-    if (supportButton) {
-      const alreadySupported = localStorage.getItem("dragaoDoMar_supported") === "yes";
-      supportButton.disabled = alreadySupported;
-      supportButton.textContent = alreadySupported ? "Você já registrou seu apoio neste navegador" : "Apoiar essa ideia";
-    }
-  };
-
-  if (supportButton) {
-    supportButton.addEventListener("click", () => {
-      if (localStorage.getItem("dragaoDoMar_supported") === "yes") return;
-      localCount += 1;
-      localStorage.setItem(countKey, String(localCount));
-      localStorage.setItem("dragaoDoMar_supported", "yes");
-      renderCount();
-    });
-  }
-  renderCount();
 
   // Web3Forms: envia sugestões e perguntas sem exigir identificação.
   // Nome e e-mail são opcionais; o e-mail permite responder quando fornecido.
