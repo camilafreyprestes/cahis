@@ -1355,3 +1355,14 @@ button,input,select,textarea{font:inherit}
     height: 110px !important;
   }
 }
+
+
+/* Revisão 09: galeria de apoios temporariamente oculta até a inclusão das fotografias. */
+.support-gallery.gallery-hidden {
+  display: none !important;
+}
+
+/* Título da galeria em laranja quando o painel for reativado. */
+.support-gallery .gallery-heading h3 {
+  color: var(--orange);
+}
