@@ -1135,3 +1135,223 @@ button,input,select,textarea{font:inherit}
   .hero-kicker::before, .hero-kicker::after { font-size: 16px; }
   .commitment-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+
+/* ===== Revisão 08: divisórias e equipe atualizada (18/11/2026) ===== */
+
+/* Todas as artes mantêm sua proporção, ocupam a largura da viewport e não são deformadas. */
+.wave-divider--hero-intro,
+.wave-divider--intro,
+.wave-divider--accountability-team,
+.wave-divider--support,
+.footer-divider {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.wave-divider--hero-intro {
+  height: clamp(110px, 10.42vw, 200px);
+  background: transparent;
+}
+.wave-divider--hero-intro img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+}
+
+.wave-divider--intro {
+  height: clamp(110px, 10.42vw, 200px);
+}
+.wave-divider--intro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wave-divider--accountability-team {
+  height: clamp(110px, 10.42vw, 200px);
+}
+.wave-divider--accountability-team img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wave-divider--support {
+  height: clamp(110px, 10.42vw, 200px);
+}
+.wave-divider--support img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer-divider {
+  height: clamp(120px, 8.6vw, 170px);
+  background: var(--orange);
+}
+.footer-divider img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+}
+
+/* A divisória 1–2 usa as cores nativas do SVG; as demais preservam os tratamentos cromáticos existentes. */
+.wave-divider--hero-intro img { filter: none; }
+
+/* Evita que regras responsivas anteriores reduzam as divisórias em telas menores. */
+@media (max-width: 680px) {
+  .wave-divider--hero-intro,
+  .wave-divider--intro,
+  .wave-divider--accountability-team,
+  .wave-divider--support { height: 200px; }
+  .footer-divider { height: 165px; }
+}
+@media (max-width: 420px) {
+  .wave-divider--hero-intro,
+  .wave-divider--intro,
+  .wave-divider--accountability-team,
+  .wave-divider--support { height: 180px; }
+  .footer-divider { height: 160px; }
+}
+
+
+/* ===== Revisão 09: refinamento das divisórias (18/11/2026) ===== */
+
+/* Divisória 1–2: redução de 20% em relação aos 200 px anteriores. */
+.wave-divider--hero-intro {
+  height: 160px;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
+}
+.wave-divider--hero-intro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+}
+
+/* Divisória 2–3: altura reduzida de 200 px para 160 px. */
+.wave-divider--intro {
+  height: 160px;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Divisória 6–7: altura definida em 160 px. */
+.wave-divider--support {
+  height: 160px;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Mantém as alturas solicitadas também em telas pequenas, sem margens laterais. */
+@media (max-width: 680px) {
+  .wave-divider--hero-intro,
+  .wave-divider--intro,
+  .wave-divider--support {
+    height: 160px;
+  }
+}
+
+
+/* ===== Revisão 10: correspondência cromática e ajuste de altura ===== */
+
+/* A seção 2 e a base da divisória 1–2 usam o mesmo valor hexadecimal. */
+.intro {
+  background-color: #16304A !important;
+}
+.wave-divider--hero-intro {
+  background-color: #16304A !important;
+  height: 160px;
+}
+.wave-divider--hero-intro img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none !important;
+  opacity: 1;
+}
+
+/* Redução das transições 2–3 e 6–7 para 140 px. */
+.wave-divider--intro,
+.wave-divider--support {
+  height: 140px !important;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Preserva as dimensões em celulares, sem reduzir novamente por regras antigas. */
+@media (max-width: 680px) {
+  .wave-divider--hero-intro { height: 160px !important; }
+  .wave-divider--intro,
+  .wave-divider--support { height: 140px !important; }
+}
+@media (max-width: 420px) {
+  .wave-divider--hero-intro { height: 160px !important; }
+  .wave-divider--intro,
+  .wave-divider--support { height: 140px !important; }
+}
+
+
+/* ===== Revisão 11: alturas das barras e das ondas (18/11/2026) ===== */
+
+/* Todas as divisórias em formato de barras passam a ter 40 px de altura. */
+.line-transition {
+  height: 40px !important;
+}
+
+/* Mantém a altura de 40 px também nos layouts responsivos. */
+@media (max-width: 680px) {
+  .line-transition {
+    height: 40px !important;
+  }
+}
+
+/* Ondas entre as seções 2–3 e 6–7: 110 px de altura. */
+.wave-divider--intro,
+.wave-divider--support {
+  height: 110px !important;
+}
+
+@media (max-width: 680px) {
+  .wave-divider--intro,
+  .wave-divider--support {
+    height: 110px !important;
+  }
+}
+@media (max-width: 420px) {
+  .wave-divider--intro,
+  .wave-divider--support {
+    height: 110px !important;
+  }
+}
